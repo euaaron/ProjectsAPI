@@ -14,8 +14,11 @@ export class Server {
   }
 
   private loadMiddlewares() {
-    // this._instance.use(express.static('public'));
-    this._instance.use(cors());
+    this._instance.use(
+      cors({
+        origin: '*',
+      }),
+    );
     this._instance.use(express.json());
 
     const specs = swaggerJSDoc(swaggerOptions);

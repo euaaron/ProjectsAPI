@@ -1,0 +1,9 @@
+{
+  "endOfLine": "lf",
+  "tabWidth": 2,
+  "removeComments": true,
+  "bracketSameLine": true,
+  "arrowParens": "avoid",
+  "singleQuote": true,
+  "trailingComma": "all"
+}

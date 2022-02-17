@@ -1,6 +1,6 @@
 import axios from "axios";
 import cheerio from "cheerio";
-import { date } from "../../utils/time";
+import { date } from "../../../shared/utils/time";
 import { GitHubRepositoryDTO } from "./dto/GitHubRepositoryDTO";
 
 /**

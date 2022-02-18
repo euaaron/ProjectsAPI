@@ -42,7 +42,7 @@ export function ProjectsRouter(router: Router = express.Router()): Router {
     if (name) {
       const project = projects.find((item) => item.url.includes(String(name)));
       if (project) {
-        return res.json(project);
+        return res.status(200).json(project);
       }
       return res.status(404).json({ message: "Project not found" });
     } else {

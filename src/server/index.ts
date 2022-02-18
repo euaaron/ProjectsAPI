@@ -16,7 +16,14 @@ export class Server {
   private loadMiddlewares() {
     this._instance.use(
       cors({
-        origin: '*',
+        origin: [
+          'http://localhost:3000',
+          'http://localhost:3001',
+          'https://aaroncarneiro.com',
+          '/.aaroncarneiro.com$/',
+        ],
+        preflightContinue: true,
+        optionsSuccessStatus: 200,
       }),
     );
     this._instance.use(express.json());
@@ -44,7 +51,7 @@ export class Server {
   }
 
   private loadRoutes() {
-    this._instance.use('/projects', ProjectsRouter());
+    this._instance.use('/projects', cors(), ProjectsRouter());
   }
 
   public load() {
